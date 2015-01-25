@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="search-engine">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Search</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- angular -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+        <script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
+        <!-- loadingbar -->
+        <script type="text/javascript"  src="js/loading-bar.js"></script>
+        <link rel='stylesheet' href='css/loading-bar.css'/>
+        <!-- app -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="js/pagination/dirPagination.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <link rel='stylesheet' href= "css/app.css">
+    </head>
+    <body ng-controller="SECtrl as ctrl" >
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class=".container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href ng-click="ctrl.startOver()">
+              <i class="fa fa-compass fa-3x"></i>
+            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href ng-click="ctrl.tooglePane('info')"><i class="fa fa-info-circle fa-3x"></i></a>
+              </li>
+              <!--
+              <li>
+                <a href ng-click="ctrl.tooglePane('settings')"><i class="fa fa-cogs fa-3x"></i></a>
+              </li>
+            -->
+            </ul>
+            <form class="navbar-form">
+              <div class="form-group" style="display:inline;">
+                <div class="input-group" style="display:table; top: 10px;">
+                  <input ng-model="ctrl.query" class="form-control" name="search" placeholder="" autocomplete="off" autofocus="autofocus" type="text">
+                  <a href ng-click="ctrl.search()" class="input-group-addon" style="width:1%;">
+                    <div class="search-button">
+                      <i class="fa fa-search fa-2x"></i>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div ng-show="ctrl.panes['info']" class="jumbotron info-pannel">
+        <div class="info-boolean">
+          Boolean Search:
+          <ul style="padding-left: 20px">
+            <li>Nesting: <code>()</code> </li>
+            <li>NOT: <code>!term </code></li>
+            <li>AND: <code>term1 & term2</code></li>
+            <li>OR: <code>term1 | term2</code></li>
+          </ul>
+        </div>
+        <div class="info-extra">
+        <ul style="list-style-type:none; padding-left: 0px">
+        <li><code>term1 term2 term3</code> == <code>term1 & term2 & term3</code></li>
+        <li>Exact term: <code>"exact term"</code></li>
+        <li>Phrase search: <code>[phrase to search]</code></li>
+        <ul>
+        </div>
+      </div>
+      <div ng-show="ctrl.panes['settings']" class="jumbotron settings-pannel">
+        Settings: ToDo
+      </div>
+        <div class="result-elem" dir-paginate="result in results | itemsPerPage: 10" total-items="totalResults">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title result-title">
+                <a class="result-link" href="{{result.url}}">
+                  {{result.title}}
+                </a>
+              </h3>
+            </div>
+            <div class="panel-body">
+              <span class="result-link-full">{{result.url}}</span>
+              <div class="result-snippet">{{result.snippet}}</div>
+            </div>
+          </div>
+        </div>
+    <div class= "text-center">
+        <dir-pagination-controls boundary-links="false" template-url="js/pagination/dirPagination.tpl.html" on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+    </div>
+    </body>
+</html>

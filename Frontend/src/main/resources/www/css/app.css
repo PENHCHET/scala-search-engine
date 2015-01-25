@@ -1,0 +1,202 @@
+.navbar {
+  min-height: 90px;
+}
+.navbar-right {
+  margin-right: 0px;
+}
+
+.navbar-header{
+  padding: 15px;
+  text-align: center;
+}
+
+.navbar-brand {
+  line-height: 60px;
+  height: 60px;
+  padding: 0px;
+}
+
+.navbar-toggle {
+  border-width: 0px;
+  padding: 10px;
+  margin-top: 13px;
+  margin-bottom: 13px;
+  margin-right: 0px;
+}
+.navbar-home{
+  position: relative;
+  float: left;
+}
+.result-elem{
+  margin-top: 25px;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+h3.result-title{
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+a.result-link{
+  color: #1F4668;
+}
+.result-link-full{
+  color: #55AC7F;
+}
+
+body{
+  padding-top: 90px;
+  background-color: #D7DAE5;
+}
+
+.jumbotron{
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.search-result-content{
+  margin: 0px;
+  border-radius: 0px;
+}
+
+.navbar-nav{
+  height: 90px;
+}
+
+.navbar-nav > li > a{
+  padding-top: 0px;
+  padding-bottom: 0px;
+  line-height: 90px;
+  height: 60px;
+}
+
+.navbar-default {
+  background-color: #1f4668;
+  border-color: #212337;
+}
+
+.form-control {
+  height: 50px;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+.btn-default {
+  height: 40px;
+  border-radius: 10px;
+}
+
+.input-group-addon{
+  border-radius: 20px;
+}
+
+.info-pannel{
+  padding: 0px 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.settings-pannel{
+  padding: 0px 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.info-boolean{
+  margin-left: 25px;
+}
+
+.info-extra{
+  margin-left: 25px;
+}
+
+.navbar-nav > li{
+  top:10px;
+  text-align: center;
+}
+
+.navbar-default .navbar-brand {
+  color: #55ac7f;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #d89346;
+}
+.navbar-default .navbar-text {
+  color: #55ac7f;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #55ac7f;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #d89346;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #d89346;
+  background-color: #212337;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #d89346;
+  background-color: #212337;
+}
+.navbar-default .navbar-toggle {
+  border-color: #212337;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #212337;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #55ac7f;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #55ac7f;
+}
+.navbar-default .navbar-link {
+  color: #55ac7f;
+}
+.navbar-default .navbar-link:hover {
+  color: #d89346;
+}
+
+@media (max-width: 767px) {
+  .jumbotron{
+    margin: 0px;
+    border-radius: 0px;
+  }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #55ac7f;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #d89346;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #d89346;
+    background-color: #212337;
+  }
+
+  .navbar-nav > li > a {
+    line-height: 50px;
+  }
+
+  .navbar-form{
+    border-top: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    box-shadow: 0px 0px 0px rgba(255, 255, 255, 0.1) inset, 0px 0px 0px rgba(255, 255, 255, 0.1)
+  }
+
+}
+
+a.input-group-addon:hover{
+  background-color: #D89346
+}
+
+a.input-group-addon{
+  background-color: #55AC7F
+}
+
+.form-control:focus{
+  border-color: #55AC7F;
+  outline: 5px none;
+}
