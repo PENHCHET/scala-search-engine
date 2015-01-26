@@ -1,1 +1,1 @@
-http://www.семантик.рф/?.*
+http://www.example.com/?.*
