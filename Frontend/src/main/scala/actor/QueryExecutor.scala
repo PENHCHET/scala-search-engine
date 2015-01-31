@@ -13,10 +13,10 @@ class QueryExecutor extends Actor{
   }
   else{IndexWithURLTable.getForNotTerm(term)}
   def getWord(term: String): Future[Set[(String, Set[Int])]] = if(context.system.settings.config.getBoolean("app.reduceDublicates")){
-    IndexWithHashTable.getForTerm(term).map{ list => list.map{row => (row.hash.toString, row.indexes)}.toSet}
+    IndexWithHashTable.getForTerm(term).map{ list => list.map{row => (row.hash.toString, row.indices)}.toSet}
   }
   else{
-    IndexWithURLTable.getForTerm(term).map{ list => list.map{row => (row.url, row.indexes)}.toSet}
+    IndexWithURLTable.getForTerm(term).map{ list => list.map{row => (row.url, row.indices)}.toSet}
   }
   def getPhrase(parts: Array[String], matching: Option[Set[Int]]): Future[Set[String]] = {
     matching match{

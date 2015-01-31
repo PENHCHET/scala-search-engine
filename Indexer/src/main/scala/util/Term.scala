@@ -1,6 +1,5 @@
 package util
 
-//import org.apache.lucene.analysis.standard.StandardAnalyzer
 import org.apache.lucene.util.Version
 import org.apache.lucene.analysis.TokenFilter
 import org.apache.lucene.analysis.en.EnglishMinimalStemFilter

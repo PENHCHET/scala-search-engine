@@ -5,17 +5,17 @@ import com.websudos.phantom.Implicits._
 import scala.concurrent.Await
 import scala.concurrent.duration._
 
-case class IndexWithHashRow(term: String, indexes: Set[Int], hash: java.util.UUID)
-case class IndexWithURLRow(term: String, indexes: Set[Int], url: String)
+case class IndexWithHashRow(term: String, indices: Set[Int], hash: java.util.UUID)
+case class IndexWithURLRow(term: String, indices: Set[Int], url: String)
 
 sealed class IndexWithHashTable extends CassandraTable[IndexWithHashTable, IndexWithHashRow]{
   object term extends StringColumn(this) with PartitionKey[String]
-  object indexes extends SetColumn[IndexWithHashTable, IndexWithHashRow, Int](this)
+  object indices extends SetColumn[IndexWithHashTable, IndexWithHashRow, Int](this)
   object hash extends UUIDColumn(this) with PrimaryKey[java.util.UUID]
   def fromRow(r: Row): IndexWithHashRow = {
     IndexWithHashRow(
       term(r),
-      indexes(r),
+      indices(r),
       hash(r)
     )
   }
@@ -23,12 +23,12 @@ sealed class IndexWithHashTable extends CassandraTable[IndexWithHashTable, Index
 
 sealed class IndexWithURLTable extends CassandraTable[IndexWithURLTable, IndexWithURLRow]{
   object term extends StringColumn(this) with PartitionKey[String]
-  object indexes extends SetColumn[IndexWithURLTable, IndexWithURLRow, Int](this)
+  object indices extends SetColumn[IndexWithURLTable, IndexWithURLRow, Int](this)
   object url extends StringColumn(this) with PrimaryKey[String]
   def fromRow(r: Row): IndexWithURLRow = {
     IndexWithURLRow(
       term(r),
-      indexes(r),
+      indices(r),
       url(r)
     )
   }
